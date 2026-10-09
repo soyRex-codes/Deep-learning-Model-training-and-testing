@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "completed_epochs": 10,
+  "training_samples_per_epoch": 50000,
+  "final_test_samples": 10000,
+  "parameters": 33834,
+  "flops_per_image": 2811904,
+  "checks": [
+    "Exact architecture and state-dict load",
+    "10+ full training epochs",
+    "CSV and JSON metrics agree",
+    "All 10,000 test predictions accounted for",
+    "Per-layer and total complexity match independent manual values",
+    "Training graphs exist",
+    "Current executable statements match the recorded training source",
+    "Reloaded checkpoint reproduces every test prediction and final metrics"
+  ],
+  "saved_model_retested": true
+}

@@ -1,0 +1,25 @@
+CSC725 Homework 2 - How to run
+
+Use Python 3.12. Open a terminal in the folder containing hw2_solution.py,
+requirements.txt, and this file.
+
+1. Install the required packages:
+
+   python -m pip install -r requirements.txt
+
+2. Run the model-complexity calculations without training:
+
+   python hw2_solution.py --complexity-only
+
+3. To train and evaluate the CNN for 10 epochs:
+
+   python hw2_solution.py --epochs 10 --output-dir results_new
+
+The program downloads CIFAR-10 automatically on the first training run, so
+internet access is needed then. It saves the new metrics, graphs, predictions,
+and checkpoint in results_new. The included results folder contains the
+completed run and is not overwritten. Training time and exact metrics may
+vary by computer and device.
+
+If your system uses python3 instead of python, replace python with python3
+in the commands above.

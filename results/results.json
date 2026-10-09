@@ -1,0 +1,245 @@
+{
+  "config": {
+    "epochs": 10,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "seed": 725,
+    "num_workers": 0,
+    "cpu_threads": 4,
+    "device": "auto",
+    "data_dir": "data",
+    "output_dir": "results_new"
+  },
+  "device": "mps",
+  "training_seconds": 69.27686970797367,
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "torchvision": "0.29.1",
+    "platform": "macOS-15.7.9-arm64-arm-64bit"
+  },
+  "dataset": {
+    "name": "CIFAR-10",
+    "training_samples": 50000,
+    "test_samples": 10000,
+    "classes": [
+      "airplane",
+      "automobile",
+      "bird",
+      "cat",
+      "deer",
+      "dog",
+      "frog",
+      "horse",
+      "ship",
+      "truck"
+    ]
+  },
+  "parameters": {
+    "layers": [
+      {
+        "layer": "conv1",
+        "type": "Conv2d",
+        "weights": 432,
+        "biases": 16,
+        "other": 0,
+        "total": 448
+      },
+      {
+        "layer": "conv2",
+        "type": "Conv2d",
+        "weights": 4608,
+        "biases": 32,
+        "other": 0,
+        "total": 4640
+      },
+      {
+        "layer": "conv3",
+        "type": "Conv2d",
+        "weights": 18432,
+        "biases": 64,
+        "other": 0,
+        "total": 18496
+      },
+      {
+        "layer": "fc",
+        "type": "Linear",
+        "weights": 10240,
+        "biases": 10,
+        "other": 0,
+        "total": 10250
+      }
+    ],
+    "total": 33834
+  },
+  "flops": {
+    "input_size": [
+      1,
+      3,
+      32,
+      32
+    ],
+    "layers": [
+      {
+        "layer": "conv1",
+        "type": "Conv2d",
+        "input_shape": [
+          1,
+          3,
+          32,
+          32
+        ],
+        "output_shape": [
+          1,
+          16,
+          32,
+          32
+        ],
+        "flops": 442368,
+        "batch_flops": 442368
+      },
+      {
+        "layer": "conv2",
+        "type": "Conv2d",
+        "input_shape": [
+          1,
+          16,
+          16,
+          16
+        ],
+        "output_shape": [
+          1,
+          32,
+          16,
+          16
+        ],
+        "flops": 1179648,
+        "batch_flops": 1179648
+      },
+      {
+        "layer": "conv3",
+        "type": "Conv2d",
+        "input_shape": [
+          1,
+          32,
+          8,
+          8
+        ],
+        "output_shape": [
+          1,
+          64,
+          8,
+          8
+        ],
+        "flops": 1179648,
+        "batch_flops": 1179648
+      },
+      {
+        "layer": "fc",
+        "type": "Linear",
+        "input_shape": [
+          1,
+          1024
+        ],
+        "output_shape": [
+          1,
+          10
+        ],
+        "flops": 10240,
+        "batch_flops": 10240
+      }
+    ],
+    "total_flops": 2811904,
+    "batch_flops": 2811904,
+    "convention": "one multiplication = one FLOP; additions, biases, ReLU and pooling ignored"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.5819410260391236,
+      "accuracy": 0.4308,
+      "correct": 21540,
+      "samples": 50000,
+      "seconds": 10.67427229200257
+    },
+    {
+      "epoch": 2,
+      "loss": 1.2483238219833375,
+      "accuracy": 0.55846,
+      "correct": 27923,
+      "samples": 50000,
+      "seconds": 6.237604791997001
+    },
+    {
+      "epoch": 3,
+      "loss": 1.1088710456466675,
+      "accuracy": 0.61266,
+      "correct": 30633,
+      "samples": 50000,
+      "seconds": 6.177993750025053
+    },
+    {
+      "epoch": 4,
+      "loss": 1.0041640872573852,
+      "accuracy": 0.64944,
+      "correct": 32472,
+      "samples": 50000,
+      "seconds": 6.121130665997043
+    },
+    {
+      "epoch": 5,
+      "loss": 0.938809992980957,
+      "accuracy": 0.67482,
+      "correct": 33741,
+      "samples": 50000,
+      "seconds": 6.253374041989446
+    },
+    {
+      "epoch": 6,
+      "loss": 0.8792919751167297,
+      "accuracy": 0.69556,
+      "correct": 34778,
+      "samples": 50000,
+      "seconds": 6.604474166990258
+    },
+    {
+      "epoch": 7,
+      "loss": 0.8308923254585266,
+      "accuracy": 0.71318,
+      "correct": 35659,
+      "samples": 50000,
+      "seconds": 6.289713249949273
+    },
+    {
+      "epoch": 8,
+      "loss": 0.7910031199836731,
+      "accuracy": 0.72684,
+      "correct": 36342,
+      "samples": 50000,
+      "seconds": 6.42063083400717
+    },
+    {
+      "epoch": 9,
+      "loss": 0.755155055847168,
+      "accuracy": 0.74144,
+      "correct": 37072,
+      "samples": 50000,
+      "seconds": 6.592822749982588
+    },
+    {
+      "epoch": 10,
+      "loss": 0.7206051131629944,
+      "accuracy": 0.75266,
+      "correct": 37633,
+      "samples": 50000,
+      "seconds": 7.8156661670072936
+    }
+  ],
+  "test": {
+    "loss": 0.8473378422737121,
+    "accuracy": 0.7093,
+    "correct": 7093,
+    "samples": 10000
+  },
+  "source_sha256": "9d08adce99694d9a50737d413dbdb88f027c37ef6bfae67f72ad8b3aa366e4ea"
+}
